@@ -19,6 +19,9 @@ function ProductCard({ name, price, image }) {
       <button className="w-full mt-4 bg-black text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
         Beli Sekarang
       </button>
+      <button className="w-full mt-4 bg-black text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
+        Lihat Detail Produk
+      </button>
     </div>
   );
 }

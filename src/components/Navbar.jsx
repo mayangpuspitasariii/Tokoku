@@ -4,10 +4,11 @@ function Navbar() {
   const menus = ["Home", "Produk", "Keranjang", "Kontak"];
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="px-8 py-4 shadow-md font-serif">
+    <nav className="px-8 py-4 shadow-md ">
       <div className="flex justify-between items-center w-full">
         {/* Logo */}
-        <h1 className="text-2xl font-extrabold">TokoKu</h1>
+
+        <h1 className="text-2xl font-extrabold text-blue-900">TokoKu</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 font-semibold">
