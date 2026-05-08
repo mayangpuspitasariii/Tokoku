@@ -4,7 +4,7 @@ function Navbar() {
   const menus = ["Home", "Produk", "Keranjang", "Kontak"];
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="px-8 py-4 shadow-md ">
+    <nav className="sticky top-0 z-[999] bg-white shadow-md px-8 py-4">
       <div className="flex justify-between items-center w-full">
         {/* Logo */}
 

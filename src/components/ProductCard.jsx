@@ -1,4 +1,4 @@
-function ProductCard({ name, price, image }) {
+function ProductCard({ name, price, image, onAddToCart }) {
   return (
     <div className="w-64 rounded-xl shadow-md p-4 hover:shadow-xl transition">
       {/* Gamabr */}
@@ -13,6 +13,8 @@ function ProductCard({ name, price, image }) {
 
       {/* Harga */}
       <p className="text-gray-600 mt-1">Rp. {price}</p>
+
+      <button onClick={onAddToCart}>Tambah ke Keranjang</button>
 
       {/* Button */}
 
