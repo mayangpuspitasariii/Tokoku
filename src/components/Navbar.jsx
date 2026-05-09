@@ -13,7 +13,9 @@ function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 font-semibold">
           {menus.map((menu) => (
-            <li className="cursor-pointer hover:text-blue-800">{menu}</li>
+            <li key={menu} className="cursor-pointer hover:text-blue-800">
+              {menu}
+            </li>
           ))}
         </ul>
 

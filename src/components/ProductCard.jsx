@@ -14,13 +14,18 @@ function ProductCard({ name, price, image, onAddToCart }) {
       {/* Harga */}
       <p className="text-gray-600 mt-1">Rp. {price}</p>
 
-      <button onClick={onAddToCart}>Tambah ke Keranjang</button>
-
       {/* Button */}
-
-      <button className="w-full mt-4 bg-black text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
-        Beli Sekarang
-      </button>
+      <div className="flex w-full justify-between gap-4">
+        <button className="w-full mt-4 bg-black text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
+          Beli Sekarang
+        </button>
+        <button
+          onClick={onAddToCart}
+          className="bg-amber-500 text-white rounded-lg hover:opacity-80 cursor pointer"
+        >
+          Tambah ke Keranjang
+        </button>
+      </div>
       <button className="w-full mt-4 bg-black text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
         Lihat Detail Produk
       </button>
