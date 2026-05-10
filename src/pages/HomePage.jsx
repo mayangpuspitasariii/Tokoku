@@ -8,15 +8,20 @@ import footers from "../data/footers";
 function HomePage() {
   const [cart, setCart] = useState([]);
 
+  const totalHarga = cart.reduce(
+    (total, item) => total + item.price * item.qty,
+    0,
+  );
+
   function addToCart(product) {
     const cekProduk = cart.find((item) => item.id === product.id);
 
-    const updatedProduk = cart.map((item) =>
+    const updateProduk = cart.map((item) =>
       item.id === product.id ? { ...item, qty: item.qty + 1 } : item,
     );
 
     if (cekProduk) {
-      setCart(updatedProduk);
+      setCart(updateProduk);
     } else {
       setCart([
         ...cart,
@@ -43,7 +48,7 @@ function HomePage() {
         {cart.map((item) => (
           <div key={item.id}>
             <p>
-              {item.name} : {item.qty}
+              {item.name} : {item.qty} Rp.{item.price}
             </p>
 
             <button
@@ -55,6 +60,7 @@ function HomePage() {
             </button>
           </div>
         ))}
+        <p>Total Harga : {totalHarga}</p>
 
         {/* Judul */}
         <h1 className="text-3xl font-bold my-8">Produk Populer</h1>

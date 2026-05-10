@@ -1,4 +1,10 @@
+import { useState } from "react";
+import { FaHeart } from "react-icons/fa";
+
 function ProductCard({ name, price, image, onAddToCart }) {
+  const [like, setLike] = useState(false);
+  const totalLike = like ? 1 : 0;
+
   return (
     <div className="w-64 rounded-xl shadow-md p-4 hover:shadow-xl transition duration-300">
       {/* Gambar */}
@@ -16,7 +22,7 @@ function ProductCard({ name, price, image, onAddToCart }) {
 
       {/* Button 2 kolom */}
       <div className="flex gap-3 mt-4">
-        <button className="flex-1 bg-black text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
+        <button className="flex-1 bg-blue-800 text-white py-2 rounded-lg hover:opacity-80 cursor-pointer">
           Beli
         </button>
 
@@ -25,6 +31,11 @@ function ProductCard({ name, price, image, onAddToCart }) {
           className="flex-1 bg-amber-500 text-white py-2 rounded-lg hover:opacity-80 cursor-pointer"
         >
           Cart
+        </button>
+
+        <button onClick={() => setLike(!like)} className="cursor-pointer">
+          <FaHeart className={like ? "text-red-700" : "text-gray-400"} />{" "}
+          {totalLike}
         </button>
       </div>
 
